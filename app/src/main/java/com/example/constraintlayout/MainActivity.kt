@@ -8,6 +8,7 @@ import android.text.Editable
 import android.text.TextWatcher
 import android.util.Log
 import android.view.View
+import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import java.text.DecimalFormat
@@ -20,7 +21,9 @@ class MainActivity : AppCompatActivity() , TextWatcher, TextToSpeech.OnInitListe
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         val edtConta = findViewById<EditText>(R.id.editConta)
+        val edtAmigos = findViewById<EditText>(R.id.editNumberAmigos)
         edtConta.addTextChangedListener(this)
+        edtAmigos.addTextChangedListener(this)
         // Initialize TTS engine
         tts = TextToSpeech(this, this)
 
@@ -36,7 +39,10 @@ class MainActivity : AppCompatActivity() , TextWatcher, TextToSpeech.OnInitListe
 
     override fun afterTextChanged(s: Editable?) {
         Log.d ("PDM23", "Depois de mudar")
-        Log.d ("PDM23", s.toString())
+        val d = Log.d("PDM23", s.toString())
+
+        val btnRachar = findViewById<Button>(R.id.btnRachar)
+        btnRachar.callOnClick()
     }
 
     fun clickFalar(v: View){
@@ -45,25 +51,28 @@ class MainActivity : AppCompatActivity() , TextWatcher, TextToSpeech.OnInitListe
         val textoResultado = txtResult.text.toString()
         tts.speak(textoResultado, TextToSpeech.QUEUE_FLUSH, null, null)
     }
-    fun clickRachar(v: View){
+    fun clickRachar(v :View){
 
-        val valor_compra = findViewById<EditText>(R.id.editConta)
-        val num_amigos = findViewById<EditText>(R.id.editNumberAmigos)
+        val edtValorCompra = findViewById<EditText>(R.id.editConta)
+        val edtNumAmigos = findViewById<EditText>(R.id.editNumberAmigos)
         val txtResult = findViewById<TextView>(R.id.txtviewResult)
-        val float_valor_compra : Float? = valor_compra.text.toString().toFloatOrNull() ?: (0.00 as Float)
-        val int_num_amigos : Int = num_amigos.text.toString().toIntOrNull() ?: 1
-//        Log.d("PDM23", "Valores: $float_valor_compra $int_num_amigos")
-        var textoResultado = "A conta deu ..."
-        if(float_valor_compra != null && int_num_amigos != null){
-            val df = DecimalFormat("#.###")
-            val result : Float = float_valor_compra.div(int_num_amigos)
-            Log.d("PDM23", "Result: $result")
-            textoResultado = "A conta deu R$ "+df.format(result)
-            txtResult.setText(textoResultado)
-        }
-        txtResult.text = textoResultado
-        tts.speak(textoResultado, TextToSpeech.QUEUE_FLUSH, null, null)
+        try {
+            val float_valor_compra : Float = edtValorCompra.text.toString().toFloatOrNull() ?: (0.00 as Float)
+            val int_num_amigos : Int = edtNumAmigos.text.toString().toIntOrNull() ?: 1
+            Log.d("PDM23", "Valores: $float_valor_compra $int_num_amigos")
+            var texto_resultado = "A conta deu ..."
+            if(!float_valor_compra.isNaN() && int_num_amigos >=1){
+                val df = DecimalFormat("#.##")
+                val result : Float = float_valor_compra.div(int_num_amigos)
+                Log.d("PDM23", "Result: $result")
+                texto_resultado = "A conta deu R$ "+df.format(result)
+                txtResult.setText(texto_resultado)
+            }
+            txtResult.text = texto_resultado
 
+        } catch (e: Exception){
+            throw Exception("Preencher valores corretamente")
+        }
     }
 
     fun compartilhar(v: View){
@@ -71,7 +80,7 @@ class MainActivity : AppCompatActivity() , TextWatcher, TextToSpeech.OnInitListe
         val shareIntent = Intent()
         shareIntent.action = Intent.ACTION_SEND
         shareIntent.type="text/plain"
-        shareIntent.putExtra(Intent.EXTRA_TEXT, txtResult.text);
+        shareIntent.putExtra(Intent.EXTRA_TEXT, txtResult.text)
         startActivity(Intent.createChooser(shareIntent,getString(R.string.send_to)))
     }
 
