@@ -13,7 +13,7 @@
         android:layout_marginBottom="84dp"
         android:text="Vamos Rachar?"
         android:textSize="24sp"
-        app:layout_constraintBottom_toTopOf="@+id/edtConta"
+        app:layout_constraintBottom_toTopOf="@+id/editConta"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.483"
         app:layout_constraintStart_toStartOf="parent" />
@@ -22,31 +22,27 @@
         android:id="@+id/btFalar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="50dp"
+        android:layout_marginStart="88dp"
+        android:layout_marginTop="16dp"
         android:onClick="clickFalar"
         android:text="Falar"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/button4"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/button4" />
+        app:layout_constraintTop_toBottomOf="@+id/txtviewResult" />
 
     <Button
-        android:id="@+id/button4"
+        android:id="@+id/btnRachar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="148dp"
-        android:contentDescription="Compre suas cartas Pokemon"
-        android:onClick="clickFalar"
-        android:text="Comprar"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="88dp"
+        android:contentDescription="Calcular o valor"
+        android:onClick="clickRachar"
+        android:text="RACHAR!"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/btFalar"
-        app:layout_constraintTop_toBottomOf="@+id/edtConta" />
+        app:layout_constraintTop_toBottomOf="@+id/txtviewResult" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/floatingActionButton"
+        android:id="@+id/floatingActionBtnShare"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="84dp"
@@ -56,13 +52,14 @@
         android:importantForAccessibility="no"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button4"
+        app:layout_constraintTop_toBottomOf="@+id/btnRachar"
         app:srcCompat="?attr/actionModeShareDrawable" />
 
     <EditText
-        android:id="@+id/edtConta"
+        android:id="@+id/editConta"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:height="16dp"
         android:ems="10"
         android:hint="Insira o valor da conta"
         android:inputType="number"
@@ -74,13 +71,29 @@
         app:layout_constraintVertical_bias="0.44" />
 
     <EditText
-        android:id="@+id/editTextNumberDecimal"
+        android:id="@+id/editNumberAmigos"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:height="16dp"
         android:ems="10"
         android:hint="Quantidade de amigos"
         android:inputType="numberDecimal"
-        tools:layout_editor_absoluteX="101dp"
-        tools:layout_editor_absoluteY="365dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editConta" />
+
+    <TextView
+        android:id="@+id/txtviewResult"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:textSize="24dp"
+        android:contentDescription="Valor dividido da conta"
+        android:text="A conta deu ..."
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editNumberAmigos"
+        tools:text="A conta deu..." />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
