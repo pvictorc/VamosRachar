@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Constraint Layout</string>
+    <string name="send_to">Compartilhar para</string>
 </resources>

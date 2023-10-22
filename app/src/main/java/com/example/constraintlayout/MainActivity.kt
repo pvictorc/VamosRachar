@@ -1,5 +1,6 @@
 package com.example.constraintlayout
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.speech.tts.TextToSpeech
@@ -64,6 +65,16 @@ class MainActivity : AppCompatActivity() , TextWatcher, TextToSpeech.OnInitListe
         tts.speak(textoResultado, TextToSpeech.QUEUE_FLUSH, null, null)
 
     }
+
+    fun compartilhar(v: View){
+        val txtResult = findViewById<TextView>(R.id.txtviewResult)
+        val shareIntent = Intent()
+        shareIntent.action = Intent.ACTION_SEND
+        shareIntent.type="text/plain"
+        shareIntent.putExtra(Intent.EXTRA_TEXT, txtResult.text);
+        startActivity(Intent.createChooser(shareIntent,getString(R.string.send_to)))
+    }
+
     override fun onDestroy() {
             // Release TTS engine resources
             tts.stop()
