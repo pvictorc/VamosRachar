@@ -1,4 +1,10 @@
 <resources>
     <string name="app_name">Vamos Rachar</string>
     <string name="send_to">Compartilhar para</string>
+    <string name="title">Vamos Rachar?</string>
+    <string name="speak">FALAR</string>
+    <string name="split">RACHAR!</string>
+    <string name="bill_value_hint">Insira o valor da conta</string>
+    <string name="qt_friends_hint">Quantidade de amigos</string>
+    <string name="msg_bill">A conta deu ...</string>
 </resources>

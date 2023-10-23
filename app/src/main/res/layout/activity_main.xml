@@ -11,7 +11,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="84dp"
-        android:text="Vamos Rachar?"
+        android:text="@string/title"
         android:textSize="24sp"
         app:layout_constraintBottom_toTopOf="@+id/editConta"
         app:layout_constraintEnd_toEndOf="parent"
@@ -25,7 +25,7 @@
         android:layout_marginStart="88dp"
         android:layout_marginTop="16dp"
         android:onClick="clickFalar"
-        android:text="Falar"
+        android:text="@string/speak"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtviewResult" />
 
@@ -37,7 +37,7 @@
         android:layout_marginEnd="88dp"
         android:contentDescription="Calcular o valor"
         android:onClick="clickRachar"
-        android:text="RACHAR!"
+        android:text="@string/speak"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtviewResult" />
 
@@ -62,7 +62,7 @@
         android:layout_height="wrap_content"
         android:height="16dp"
         android:ems="10"
-        android:hint="Insira o valor da conta"
+        android:hint="@string/bill_value_hint"
         android:inputType="numberDecimal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -78,7 +78,7 @@
         android:layout_marginTop="16dp"
         android:height="16dp"
         android:ems="10"
-        android:hint="Quantidade de amigos"
+        android:hint="@string/qt_friends_hint"
         android:inputType="number"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -89,12 +89,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:textSize="24sp"
         android:contentDescription="Valor dividido da conta"
-        android:text="A conta deu ..."
+        android:text="@string/msg_bill"
+        android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editNumberAmigos"
-        tools:text="A conta deu..." />
+        tools:text="@string/msg_bill" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

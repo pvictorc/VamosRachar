@@ -60,12 +60,13 @@ class MainActivity : AppCompatActivity() , TextWatcher, TextToSpeech.OnInitListe
             val float_valor_compra : Float = edtValorCompra.text.toString().toFloatOrNull() ?: (0.00 as Float)
             val int_num_amigos : Int = edtNumAmigos.text.toString().toIntOrNull() ?: 1
             Log.d("PDM23", "Valores: $float_valor_compra $int_num_amigos")
-            var texto_resultado = "A conta deu ..."
+            val cabecalho_msg_conta : String = getString(R.string.msg_bill)
+            var texto_resultado = cabecalho_msg_conta
             if(!float_valor_compra.isNaN() && int_num_amigos >=1){
                 val df = DecimalFormat("#.##")
                 val result : Float = float_valor_compra.div(int_num_amigos)
                 Log.d("PDM23", "Result: $result")
-                texto_resultado = "A conta deu R$ "+df.format(result)
+                texto_resultado = cabecalho_msg_conta+" "+df.format(result)
                 txtResult.setText(texto_resultado)
             }
             txtResult.text = texto_resultado

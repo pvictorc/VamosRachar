@@ -2,4 +2,10 @@
 <resources>
     <string name="app_name">Let\'s Split!</string>
     <string name="send_to">Share to</string>
+    <string name="title">Let\'s Split?</string>
+    <string name="speak">SPEAK</string>
+    <string name="split">SPLIT!</string>
+    <string name="bill_value_hint">Insert the bill value</string>
+    <string name="qt_friends_hint">How many friends?</string>
+    <string name="msg_bill">Your split is...</string>
 </resources>
