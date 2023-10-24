@@ -10,3 +10,6 @@ Exemplo de onChangeListener e ACTION_SHARE
 
 ### Adaptativo tradução en
 <img src="/img/screenshot_at03_en.png" height="280">
+
+### Adaptativo hdpi 
+<img src="/img/screenshot_at03_en_hdpi.png" width="280">
