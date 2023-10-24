@@ -13,3 +13,6 @@ Exemplo de onChangeListener e ACTION_SHARE
 
 ### Adaptativo hdpi 
 <img src="/img/screenshot_at03_en_hdpi.png" width="280">
+
+### Adaptativo hdpi land
+<img src="/img/screenshot_at03_hdpi_land.png" height="280">
