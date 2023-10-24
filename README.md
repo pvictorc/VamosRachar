@@ -2,11 +2,13 @@
 Vamos Rachar
 
 ## AT_02  
-Exemplo de onChangeListener e ACTION_SHARE
+Exemplo de onChangeListener e ACTION_SHARE  
+
 <img src="/img/screenshot_at02.png" width="280">
 
 ## AT_03
-Exemplo de recursos adaptativos (linguagem, orientação do aparelho e densidade da tela)
+Exemplo de recursos adaptativos (linguagem, orientação do aparelho e densidade da tela)  
+
 <img src="/img/screenshot_at03.jpg" height="280">
 
 ### Adaptativo tradução en
