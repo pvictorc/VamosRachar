@@ -1,7 +1,7 @@
 
 ## AT 04 Apps acessíveis
-<img src="/img/acessibility.jpg">
-![Acessibility](img/acessibility.jpg)
+<img src="./img/acessibility.jpg" width="88"><br/>
+
 
 ### Erros apontados pelo Accessibility Scanner
 
